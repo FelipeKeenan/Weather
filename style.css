@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+    background-image: url('images/background-padrao.jpg');
+}
+
+.content-box {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 15px 30px;
+    box-shadow: 4px 4px 5px #555;
+    font-weight: bold;
+}
+
+.nublado {
+    background-image: url('images/background-nublado.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.algumas-nuvens {
+    background-image: url('images/algumas-nuvens.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.nuvens-dispersas {
+    background-image: url('images/nuvens-dispersas.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.backgroung-padrao {
+    background-image: url('images/background-padrao.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.ceu-limpo {
+    background-image: url('images/ceu-limpo.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.neblina {
+    background-image: url('images/neblina.jpg');
+    background-position: center;
+    background-size: cover;
+
+}
+
+.chuva-moderada {
+    background-image: url('images/chuva.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.temporal {
+    background-image: url('images/temporal.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+h1 {
+    color: #FFF;
+    margin: 20px 0;
+}
+
+.fade-in-text {
+    opacity: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.fade-in-text.animate {
+    animation: fadeInRight 3s forwards;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-200%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.busca {
+    display: flex;
+    width: 300px;
+}
+
+.busca #searchInput {
+    flex: 1;
+    padding: 10px;
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0;
+}
+
+.busca button {
+    padding: 10px;
+    font-size: 15px;
+    border: 0;
+    background-color: #555;
+    color: #FFF;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.busca button:hover {
+    background-color: #444;
+}
+
+.resultado {
+    padding: 10px;
+    width: 400px;
+    display: none;
+    border: 1px solid #FFF;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.titulo {
+    width: 100%;
+    color: #FFF;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+.info {
+    display: flex;
+    width: 100%;
+}
+.humidade{
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
+
+}
+.info .temp,
+.info .vento {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tempTitulo,
+.ventoTitulo,
+.feelsLike {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.feelsLike{
+    text-align: center;
+    margin-bottom: 25px;
+    
+}
+
+.tempInfo,
+.ventoInfo {
+    color: #FFF;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.tempInfo sup {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.ventoInfo span {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.ventoArea {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 20px;
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+.ventoPonto {
+    width: 15px;
+    height: 1px;
+    background-color: #FFF;
+    transform-origin: left;
+}
+
+.resultadoTempo {
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+}
+
+.aviso {
+    color: #FFF;
+    padding-top: 20px;
+}
+
+footer span {
+    text-decoration: underline;
+
+}
+
+footer {
+    margin-top: 20px;
+    color: #FFF;
+    font-size: 13px;
+}
