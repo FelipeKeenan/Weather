@@ -12,6 +12,9 @@ body {
     flex-direction: column;
     font-family: sans-serif;
     background-image: url('images/background-padrao.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
 }
 
 .content-box {
@@ -84,7 +87,7 @@ h1 {
     opacity: 1;
     white-space: nowrap;
     overflow: hidden;
-    font-size: 22px;
+    font-size: 1.5em;
     margin-bottom: 25px;
     color: white;
     text-shadow: 2px 2px 4px #000;
@@ -183,7 +186,7 @@ h1 {
 }
 .feelsLike{
     text-align: center;
-    margin-bottom: 25px;
+    margin-top: 30px;
     
 }
 
@@ -210,7 +213,7 @@ h1 {
     border: 1px solid #FFF;
     border-radius: 50%;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 40px;
     padding-left: 25px;
     padding-top: 25px;
 }
@@ -221,8 +224,12 @@ h1 {
     background-color: #FFF;
     transform-origin: left;
 }
+.temperatura-máxima{
+    color: #fff;
+}
 
 .resultadoTempo {
+    margin-top: 30px;
     text-align: center;
     color: #fff;
     font-size: 22px;
@@ -242,4 +249,86 @@ footer {
     margin-top: 20px;
     color: #FFF;
     font-size: 13px;
+}
+footer span a{
+    color:#fff;
+    text-decoration: none;
+}
+
+
+/*Responsividade*/
+
+
+@media screen and (max-width: 948px) {
+    .content-box {
+        padding: 10px;
+        margin: 10px;
+        width:90%; 
+    }
+    #saudacoes,
+    .fade-in-text{
+        font-size: 1.25em;
+    }
+}
+
+@media screen and (max-width: 897px){
+    #saudacoes,
+    .fade-in-text{
+        font-size: 1.20em;
+    }
+    .content-box{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:817px){
+    #saudacoes,
+    .fade-in-text{
+        font-size: 1.15em;
+    }
+    .content-box{
+        width: 100%;
+        margin: 0px 30px;
+    }
+}
+@media screen and (max-width:739px){
+    #saudacoes,
+    .fade-in-text{
+        font-size: 1em;
+    }
+    .content-box{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 641px){
+    #saudacoes,
+    .fade-in-text{
+        font-size: 0.8em;
+    
+    }
+    .content-box{
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 527px){
+    #saudacoes,
+    .fade-in-text{
+        font-size: 0.7em;
+    }
+    .busca input{
+        width: 150px;
+        padding: 3px;
+        font-size: 10px;
+    }
+    footer{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:465px){
+    #saudacoes,
+    .fade-in-text{
+        font-size: 0.60em;
+    }
+
 }

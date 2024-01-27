@@ -16,8 +16,8 @@ async function weather(event) { //Estou dizendo pra minha função que vou digit
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input)}&appid=da502ad132ee0e8e0c855f8d32f3a416&units=metric&lang=pt_br` //URL que faz a integração com o OpenWeather, só que no lugar de "Name City", coloco o valor do input digitado pelo usuário.
         // "&lang=pt_br" deixa em português do Brasil, assim como o "&units=metric" deixa a temperatura em Celsius.
 
-        let results = await fetch(url) //Await fazz a requisição e espera o resultado.
-        let json = await results.json() //A variável json vai armazenar a o resultado em JSON já pronto; o JSON é um objeto que contém as informações.
+        let results = await fetch(url) //Await faz a requisição e espera o resultado.
+        let json = await results.json() //A variável json vai armazenar  o resultado em JSON já pronto; o JSON é um objeto que contém as informações.
 
 
         if (json.cod === 200) {   //Estou verificando, caso o código for 200 (cidade válida), ele vai conseguir fazer a requisição. O "cod" foi pego lá no "PREVIEW" do JSON.
@@ -30,7 +30,10 @@ async function weather(event) { //Estou dizendo pra minha função que vou digit
                 windAngle: json.wind.deg,
                 descriptionWeather: json.weather[0].description,
                 sensation: json.main.feels_like,
-                humidade: json.main.humidity
+                tempMax: json.main.temp_max
+
+
+               
 
             })
             changeBg(json.weather[0].description);
@@ -41,6 +44,7 @@ async function weather(event) { //Estou dizendo pra minha função que vou digit
 
     }
     else {
+        alert('Favor digitar uma cidade no campo abaixo.')
         clearInfos();
     }
       // Removendo o conteúdo da função boasVindas após o submit:
@@ -58,7 +62,8 @@ async function weather(event) { //Estou dizendo pra minha função que vou digit
         document.querySelector('.ventoInfo').innerHTML = `${json.windSpeed.toFixed('1')} <span>km/h</span></div>`;
         document.querySelector('.resultadoTempo').innerHTML = `${json.descriptionWeather.toUpperCase()}`;
         document.querySelector('.feelsLike').innerHTML = `Sensação térmica: <br> <br> ${json.sensation.toFixed('1')} ºC`
-        document.querySelector('.humidade').innerHTML = `Humidade: <br> <br> ${json.humidade}`
+        document.querySelector('.max-temp').innerHTML = `<p style="font-size: 20px">Temperatura máxima</p> <br><p style="font-size=20px">${json.tempMax.toFixed('1')} ºC</p>`
+        
 
 
         //Colocando o ícone de cada clima
@@ -110,10 +115,10 @@ function boasVindas() {
     let data = new Date();
     let hora = data.getHours();
     if (hora > 0 && hora < 12) {
-        saudacoes.innerHTML = `Muito bom dia! Que tal saber como vai o clima em qualquer cidade do mundo?`
+        saudacoes.innerHTML = `Muito bom dia! Que tal saber como vai o clima atual em qualquer cidade do mundo?`
     } else if (hora > 12 && hora <= 18) {
-        saudacoes.innerHTML = `Muito boa tarde! Que tal saber como vai o clima em qualquer cidade do mundo?`
+        saudacoes.innerHTML = `Muito boa tarde! Que tal saber como vai o clima atual em qualquer cidade do mundo?`
     } else {
-        saudacoes.innerHTML = `Muito boa noite! Que tal saber como vai o clima em qualquer cidade do mundo?`
+        saudacoes.innerHTML = `Muito boa noite! Que tal saber como vai o clima atual em qualquer cidade do mundo?`
     }
 }
