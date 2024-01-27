@@ -26,7 +26,7 @@ async function weather(event) { //Estou dizendo pra minha função que vou digit
                 country: json.sys.country,
                 temp: json.main.temp,
                 weatherIcon: json.weather[0].icon,
-                windSpeed: json.wind.gust,
+                windSpeed: json.wind.speed * 1.6,
                 windAngle: json.wind.deg,
                 descriptionWeather: json.weather[0].description,
                 sensation: json.main.feels_like,
@@ -59,7 +59,7 @@ async function weather(event) { //Estou dizendo pra minha função que vou digit
         //Colocando as informações em seus devidos lugares no HTML.
         document.querySelector('.titulo').innerHTML = `${json.name}, ${json.country}`;
         document.querySelector('.tempInfo').innerHTML = `${json.temp.toFixed('1')} <sup>ºC</sup>`;
-        document.querySelector('.ventoInfo').innerHTML = `${json.windSpeed.toFixed('1')} <span>km/h</span></div>`;
+        document.querySelector('.ventoInfo').innerHTML = `${json.windSpeed.toFixed(1)} <span>km/h</span></div>`;
         document.querySelector('.resultadoTempo').innerHTML = `${json.descriptionWeather.toUpperCase()}`;
         document.querySelector('.feelsLike').innerHTML = `Sensação térmica: <br> <br> ${json.sensation.toFixed('1')} ºC`
         document.querySelector('.max-temp').innerHTML = `<p style="font-size: 20px">Temperatura máxima</p> <br><p style="font-size=20px">${json.tempMax.toFixed('1')} ºC</p>`
